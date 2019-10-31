@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TravelKut</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="forget_pass_text">Enter the email you used to create your\n TravelKut account and we will send you your\npassword reset instructions.</string>
+</resources>

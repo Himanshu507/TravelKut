@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="160dp"
+    android:layout_height="240dp"
+    android:layout_margin="6dp"
+    android:orientation="vertical"
+    app:cardCornerRadius="8dp">
+
+    <ImageView
+        android:id="@+id/hot_place_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@color/cardview_dark_background" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="170dp"
+        android:background="@drawable/shadow_drawable"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:paddingStart="16dp"
+            android:text="Bali, Indonesia"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:maxLines="1"
+            android:textSize="11sp"
+            android:paddingStart="16dp"
+            android:text="1968 travelors now"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

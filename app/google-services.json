@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "927870312396",
+    "firebase_url": "https://travelkutt.firebaseio.com",
+    "project_id": "travelkutt",
+    "storage_bucket": "travelkutt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927870312396:android:2130fe97f55c51f7b68769",
+        "android_client_info": {
+          "package_name": "com.travel.kut"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "927870312396-21oikrd4r77m5pejstbaljd43d6ngm2i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.travel.kut",
+            "certificate_hash": "2c359d8c6de5605db489cb84c4e988c26f60eba0"
+          }
+        },
+        {
+          "client_id": "927870312396-8dkjoj2ik0m65srh8elicn9sa6o06m7a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvPiwj9NbfBSp6Tv3lrIpOz6WirnhP8ks"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "927870312396-8dkjoj2ik0m65srh8elicn9sa6o06m7a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
