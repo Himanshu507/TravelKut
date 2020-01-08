@@ -1,8 +1,6 @@
 package com.travel.kut.Phase1.MainFragments;
 
 
-import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,30 +10,21 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.SimpleTarget;
-import com.bumptech.glide.request.transition.Transition;
-import com.google.android.material.appbar.AppBarLayout;
-import com.travel.kut.Phase1.Adapter.Hot_Places_Adapter;
-import com.travel.kut.Phase1.Adapter.Main_Places_Adapter;
-import com.travel.kut.Phase1.Adapter.Story_Adapter;
-import com.travel.kut.Phase1.Adapter.Top_Journey_Adapter_Main;
+import com.travel.kut.Phase1.Adapter.MockAdapter;
 import com.travel.kut.R;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class HomeFragment extends Fragment {
 
-    AppBarLayout main_background_img;
-    CircleImageView user_pic;
-    RecyclerView places_recycler, stories_recycler,journey_recycler,hot_places_recycler;
-    Main_Places_Adapter mainPlacesAdapter;
-    Story_Adapter story_adapter;
-    Top_Journey_Adapter_Main top_journey_adapter_main;
-    Hot_Places_Adapter hot_places_adapter;
+
+    MockAdapter mockAdapter;
+    RecyclerView recyclerView;
+    ImageView daily_img, monthly_img;
+    TextView daily_text, monthly_text;
+
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -48,8 +37,37 @@ public class HomeFragment extends Fragment {
         /*getActivity().requestWindowFeature(Window.FEATURE_NO_TITLE);
         getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);*/
-        View view = inflater.inflate(R.layout.fragment_home,container,false);
-        main_background_img = view.findViewById(R.id.appbar_layout);
+        View view = inflater.inflate(R.layout.home_fragment1, container, false);
+        recyclerView = view.findViewById(R.id.recylcer_for_pdf);
+        mockAdapter = new MockAdapter(getContext());
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        recyclerView.setAdapter(mockAdapter);
+        monthly_text = view.findViewById(R.id.monthly_text);
+        monthly_img = view.findViewById(R.id.monthly_dot);
+        daily_img = view.findViewById(R.id.daily_dot);
+        daily_text = view.findViewById(R.id.daily_text);
+
+        monthly_text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                daily_img.setVisibility(View.GONE);
+                daily_text.setTextColor(getContext().getResources().getColor(R.color.white_1));
+                monthly_text.setTextColor(getContext().getResources().getColor(R.color.black));
+                monthly_img.setVisibility(View.VISIBLE);
+            }
+        });
+
+        daily_text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                daily_img.setVisibility(View.VISIBLE);
+                monthly_text.setTextColor(getContext().getResources().getColor(R.color.white_1));
+                daily_text.setTextColor(getContext().getResources().getColor(R.color.black));
+                monthly_img.setVisibility(View.GONE);
+            }
+        });
+
+        /* main_background_img = view.findViewById(R.id.appbar_layout);
         user_pic = view.findViewById(R.id.user_picc);
         places_recycler = view.findViewById(R.id.recylcer_places_for_you);
         stories_recycler = view.findViewById(R.id.stories_recycler);
@@ -81,7 +99,7 @@ public class HomeFragment extends Fragment {
                     main_background_img.setBackground(resource);
                 }
             }
-        });
+        });*/
         //Glide.with(getContext()).load("https://www.women-traveling.com/DesktopModules/TripView/TripImage.ashx?TripID=2020-0028").into(main_background_img);
         return view;
     }
